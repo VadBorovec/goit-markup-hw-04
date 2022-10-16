@@ -92,7 +92,9 @@ img {
 .link:focus,
 .link.current,
 .contacts:hover,
-.contacts:focus {
+.contacts:focus
+.logo:hover,
+.logo:focus {
     color: var(--accent-color);
     outline: none;
 }
@@ -392,6 +394,7 @@ img {
 .join-container .social-link:focus {
     color: var(--white-text-color);
     background-color: var(--accent-color);
+    outline: none;
 }
 
 .social-icon {
@@ -432,9 +435,11 @@ img {
     padding: 16px;
 }
 
-.clients-link:hover {
+.clients-link:hover,
+.clients-link:focus {
     color: var(--accent-color);
     border-color: var(--accent-color);
+    outline: none;
 }
 
 .clients-icon {
