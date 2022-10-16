@@ -15,6 +15,10 @@
     --secondary-bcg-color: #F5F4FA;
     /* темний колір фону */
     --dark-bcg-color: #2F303A;
+    /* градієнт */
+    --gradient: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    /* колір іконок */
+    --icon-current-color: #AFB1B8;
 }
 
 /* Тіло */
@@ -90,6 +94,7 @@ img {
 .contacts:hover,
 .contacts:focus {
     color: var(--accent-color);
+    outline: none;
 }
 
 .contacts {
@@ -198,17 +203,34 @@ img {
     gap: 50px;
 }
 
+.link.contacts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .info {
     display: flex;
     align-items: center;
     gap: 50px;
 }
 
+.contacts-icon {
+    fill: currentColor;
+    align-items: center;
+}
+
 /* Герой */
 
 .hero {
+    max-width: 1600px;
+    height: 600px;
+    margin: 0 auto;
+    background-image: var(--gradient), url('../images/hero-bg-image.jpg');
     background-color: var(--dark-bcg-color);
-    padding: 200px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-container {
@@ -216,6 +238,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 200px 0;
 }
 
 .hero-title {
@@ -279,6 +302,16 @@ img {
    width: 270px;
 }
 
+.features-icon-div {
+    display: flex;
+    max-width: 270px;
+    background-color: var(--secondary-bcg-color);
+    border-radius: 4px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
 .features .title {
     text-transform: uppercase;
     line-height: 1.14;
@@ -320,7 +353,7 @@ img {
 }
 
 .team-description {
-    padding: 30px;
+    padding: 30px 32px;
 }
 
 .team .title {
@@ -331,6 +364,83 @@ img {
 .team .text {
     font-size: 16px;
     line-height: 1.19;
+    margin-bottom: 16px;
+}
+
+/* Соціальні мережі */
+
+.social-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-current-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.social-link:hover,
+.social-link:focus,
+.join-container .social-link:hover,
+.join-container .social-link:focus {
+    color: var(--white-text-color);
+    background-color: var(--accent-color);
+}
+
+.social-icon {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
+}
+
+/* .social-icon:hover,
+.social-icon:focus {
+    color: var(--white-text-color)
+    background-color: var(--accent-color);
+} */
+
+/* Партнери */
+
+.clients .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.clients .item {
+    width: 170px;
+    height: 92px;
+}
+
+.clients-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--icon-current-color);
+    border-radius: 4px;
+    color: var(--icon-current-color);
+    padding: 16px;
+}
+
+.clients-link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.clients-icon {
+    fill: currentColor;
+    width: 106px;
+    height: 60px;
 }
 
 /* Секція портфоліо */
@@ -350,12 +460,17 @@ img {
     gap: 30px;
 }
 
+.examples.list .link:hover,
+.examples.list .link:focus {
+    display: block;
+    /* border: 1px solid #EEEEEE; */
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .examples .item {
     width: 370px;
     border: 1px solid #EEEEEE;
     border-top: 0;
-    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-        border-radius: 0px 0px 4px 4px; */
 }
 
 .examplex-description {
@@ -382,6 +497,12 @@ img {
     padding: 60px 0;
 }
 
+.footer-container {
+    display: flex;
+    align-items: baseline;
+    gap: 70px;
+}
+
 .address .link {
     font-style: normal; 
     font-weight: 400;
@@ -395,4 +516,16 @@ img {
 
 .address .item:not(:last-child) {
     margin-bottom: 9px;
+}
+
+.join-text {
+    font-weight: 700;
+    line-height: 1.142;
+    text-transform: uppercase;
+    color: var(--white-text-color);
+    margin-bottom: 20px;
+}
+
+.join-container .social-link {
+    background-color: rgba(255, 255, 255, 0.1);
 }
